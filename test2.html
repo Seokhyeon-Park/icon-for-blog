@@ -29,12 +29,47 @@
     <div class="modal fade" id="modalArea" tabindex="-1" data-bs-backdrop = "static" aria-labelledby="modalArea" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
-                <!-- modal.html -->
+                <!-- modal-content -->
+                <!-- Modal header -->
+                <div class="modal-header">
+                    <h5>Modal Test</h5>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <!-- col-6 : [bootstrap] 가로 배치 (공간은 6/12 차지) -->
+                        <div class="col-6" style="text-align: right;">
+                            <div style="background-color: gray; color: darkblue; height: 200px;">
+                                모달 테스트
+                            </div>
+                        </div>
+                        <!-- col-6 : [bootstrap] 가로 배치 (공간은 6/12 차지) -->
+                        <div class="col-6" style="text-align: left;">
+                            <div style="background-color: darkblue; color: gray; height: 200px;">
+                                입니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="footer">
+                    <div class="float-right" style="text-align: right;">
+                        <!-- 종료 버튼 -->
+                        <!-- 
+                            btn : [bootstrap] 부트 스트랩 버튼 사용
+                            mr-2 : [bootstrap] margin right를 2만큼
+                            bm-2 : [bootstrap] margin bottom을 2만큼
+                        -->
+                        <button type="button" class="btn mr-2 mb-2" id="closeBtn">닫기</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
 
-<script src="./test.js"></script>
+<script src="./test2.js"></script>
 
 </html>
