@@ -1,7 +1,7 @@
 "use strict"
 
 // 실행
-$(function(){
+$(*function(){
     $(document).on('click', '#testBtn', function(){
         const arr = [1, 2, 3, 4, 5];
 
