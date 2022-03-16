@@ -1,25 +1,82 @@
 "use strict"
 
+/**
+ * 입력 문자열이 날짜 형태인지를 반환
+ * @param {string} date 
+ * @param {string} pattern 날짜 Format yyyyMMddHHmmssSSS
+ * @returns 
+ */
+ const isDate = (date, pattern) => {  
+    if (date.length != pattern.length) {
+       return false;
+   }
+
+   let patArr = pattern.split('');
+   let datArr = date.split('');
+   let yyyy = "";
+   let mm = "";
+   let dd = "";
+   let hh = "";
+   let mi = "";
+   let ss = "";
+   let sss = "";
+   let idx = 0;
+
+   for (let s of patArr) {
+       if (s === "y") {
+           yyyy += datArr[idx];
+       } else if (s === "M") {
+           mm += datArr[idx];
+       } else if (s === "d") {
+           dd += datArr[idx];
+       } else if (s === "H") {
+           hh += datArr[idx];
+       } else if (s === "m") {
+           mi += datArr[idx];
+       } else if (s === "s") {
+           ss += datArr[idx];
+       } else if (s === "S") {
+           sss += datArr[idx];
+       } else {
+           if (s !== datArr[idx]) {
+               return false;
+           }
+       }
+       idx++;
+   }
+   
+   // 년과, 월이 없는 경우 윤달 여부로 인해 날자 형식 확인 불가
+   if (yyyy === "") {
+       return false;
+   }
+   if (mm === "") {
+       return false;
+   }
+   if (hh === "") {
+       hh = "01";
+   }
+   if (dd === "") {
+       dd = "01";
+   }
+   if (mi === "") {
+       mi = "01";
+   }
+   if (ss === "") {
+       ss = "01";
+   }
+   if (sss === "") {
+       sss = "01";
+   }
+   return !!Date.parse(yyyy + "-" + mm + "-" + dd + "T" + hh + ":" + mi + ":" + ss + "." + sss + "Z");
+}
+
 // 실행
-$(*function(){
+$(function(){
+    let date =  isDate("19940905", "yyyyMMdd");
+    console.log("isDate?", date);       // isDate? true
+
+    
     $(document).on('click', '#testBtn', function(){
-        const arr = [1, 2, 3, 4, 5];
-
-        // 배열.reduce((누적값, 현잿값, 인덱스, 요소) => { return 결과 }, 초깃값);
-        // 배열.reduce의 두 번째 요소인 0은 초깃값 (적지 않으면 첫번째 인덱스 값을 가리킴)
-        // 배열.reduceRight 은 요소를 반대로 순회함
-        // let result = arr.reduce((acc, cur, i, d) => {
-        //     console.log("누적값 : ", acc, " 현잿값 : ", cur, " 인덱스 : ", i, " 요소 : ", d);
-        //     return acc + cur;
-        // }, 0);
-
-        let result = arr.reduce((acc, cur, i, d) => {
-            console.log("누적값 : ", acc, " 현잿값 : ", cur, " 인덱스 : ", i, " 요소 : ", d);
-            // return acc + cur;
-            if (cur % 2) acc.push(cur);
-            return acc;
-        }, []);
-
-        console.log("result : ", result);
+        
     });
 })
