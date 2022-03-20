@@ -2,9 +2,6 @@
 
 // 실행
 $(function(){
-<<<<<<< HEAD
-    
-=======
     $(document).on('click', '#testBtn', function(){
         const arr = [1, 2, 3, 4, 5];
 
@@ -25,5 +22,4 @@ $(function(){
 
         console.log("result : ", result);
     });
->>>>>>> 9dc19284b94fdcd03186e3f008cb9111bcf55916
 })
