@@ -1,20 +1,21 @@
-"use strict"
-
-
 // 실행
 $(function(){
-    $(document).on('click', '#testBtn1', function(){
-        const myAttr = $("#testDiv").attr("class");
-        console.log("class1 ? : ", myAttr);
+    $(document).on('click', '.btn', function(){
+        $(`#${$(this).attr('data-frame')}`).attr("src", `./${$(this).attr('data-frame')}.html`);
+
+        for(let ele of $('.btn')){
+            if($(`#${$(ele).attr('data-frame')}`).hasClass('d-none')){
+                $(`#${$(ele).attr('data-frame')}`).removeClass('d-none');
+            }
+            $(`#${$(ele).attr('data-frame')}`).addClass('d-none');
+        }
+
+        $(`#${$(this).attr('data-frame')}`).removeClass('d-none');
+
+        
     });
 
-    $(document).on('click', '#testBtn2', function(){
-        $("#testDiv").attr("class", "addClass");
-        console.log("class2 ? : ", $("#testDiv").attr("class"));
-    });
-
-    $(document).on('click', '#testBtn3', function(){
-        $("#testDiv").removeAttr("class");
-        console.log("class3 ? : ", $("#testDiv").attr("class"));
-    });
 })
+
+// btn-primary
+// btn-secondary
