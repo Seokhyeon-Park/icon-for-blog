@@ -12,10 +12,8 @@ $(function(){
 
         $(`#${$(this).attr('data-frame')}`).removeClass('d-none');
 
-        
+        // btn-primary
+        // btn-secondary      
     });
 
 })
-
-// btn-primary
-// btn-secondary
