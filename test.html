@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <meta charset="utf-8">
+<meta charset="utf-8">
+
 <head>
     <!-- [jQuery] -->
-    <script src="./test.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
     
-    <link rel="stylesheet" href="./test.css">
+    <!-- <script src="./test.js"></script> -->
+    <!-- <link rel="stylesheet" href="./test.css"> -->
+
+    <!-- toast tree -->
+    <script src="https://uicdn.toast.com/tui-tree/latest/tui-tree.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui-tree/latest/tui-tree.css" />
 </head>
 
 <body>
-    <div id="title" data-tooltip-text="튤팁 내용을 여기에 작성"> 내용이 길어... </div>
+    <!-- * class="tui-tree-wrap" 은 무조건 넣어줘야 함.  -->
+    <div id="treeDiv" class="tui-tree-wrap"></div>
 </body>
 
 <script src="./test.js"></script>
